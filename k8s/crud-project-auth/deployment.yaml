@@ -27,10 +27,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: webpage
+  name: crud-project-auth-service
 spec:
   selector:
-    app: webpage
+    app: crud-project-auth
   ports:
     - port: 3000
       targetPort: 3000
