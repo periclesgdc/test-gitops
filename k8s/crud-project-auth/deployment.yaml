@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crud-project-auth
+  labels:
+    app: crud-project-auth
+spec:
+  selector:
+    matchLabels:
+      app: crud-project-auth
+  template:
+    metadata:
+      labels:
+        app: crud-project-auth
+    spec:
+      containers:
+        - name: crud-project-auth
+          image: 172.19.0.2:32001/repository/docker-private/crud-project-auth:latest
+          imagePullpolicy: always
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webpage
+spec:
+  selector:
+    app: webpage
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: NodePort
