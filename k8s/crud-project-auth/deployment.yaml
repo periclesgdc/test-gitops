@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: crud-project-auth
-          image: nexus-service.tools.svc.cluster.local:8083/v2/repository/docker-private/crud-project-auth/manifests/latest
+          image: http://nexus-service.tools.svc.cluster.local:8083/v2/repository/docker-private/crud-project-auth/manifests/latest
           imagePullpolicy: always
           ports:
             - containerPort: 3000
