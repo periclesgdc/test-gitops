@@ -9,7 +9,6 @@ spec:
   selector:
     app: crud-project-auth
   ports:
-    - protocol: TCP
-      port: 3000         # Porta que será exposta
+    - port: 3000         # Porta que será exposta
       targetPort: 3000   # Porta usada no contêiner
   type: NodePort         # Ou ClusterIP / LoadBalancer dependendo da necessidade

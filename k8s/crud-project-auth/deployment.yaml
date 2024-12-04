@@ -25,15 +25,3 @@ spec:
             limits:
               memory: "128Mi"
               cpu: "250m"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: crud-project-auth-service
-spec:
-  selector:
-    app: crud-project-auth
-  ports:
-    - port: 3000
-      targetPort: 3000
-  type: NodePort
